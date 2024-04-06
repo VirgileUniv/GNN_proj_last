@@ -57,7 +57,7 @@ class FactorGraph():
             if var not in self.names_var_nodes:
                 raise ValueError("factor node on unknown variable node")
 
-        distrib = np.array(distrib)
+        distrib = np.array(distrib, dtype=np.float64)
         if distrib.ndim != len(variables):
             raise ValueError("distrib must be a {}d array (because you provided {} variables)".format(len(variables), len(variables)))
         
@@ -272,3 +272,4 @@ class URW_BP(Loopy_BP):
 
         distrib /= distrib.sum() 
         return distrib
+    
