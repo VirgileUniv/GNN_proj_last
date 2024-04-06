@@ -1,0 +1,9 @@
+# python local env
+/env
+
+# python builds
+/__pycache__
+
+# dataset
+/TUDarmstadt
+
