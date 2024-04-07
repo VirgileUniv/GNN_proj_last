@@ -273,3 +273,37 @@ class URW_BP(Loopy_BP):
         distrib /= distrib.sum() 
         return distrib
     
+
+def calculate_metrics(ground_truth, predicted_segmentation):
+    """
+    Calculate Pixel Accuracy (PA), Intersection over Union (IoU), and Dice coefficient for binary segmentation.
+    
+    Args:
+        ground_truth (numpy.ndarray): Ground truth binary mask (boolean 2D array).
+        predicted_segmentation (numpy.ndarray): Predicted segmentation mask (float 2D array with values between 0 and 1).
+    Returns:
+        pa (float): Pixel Accuracy.
+        iou (float): Intersection over Union.
+        dice (float): Dice coefficient.
+    """
+    # Convert predicted segmentation to binary maska
+    predicted_binary = (predicted_segmentation > 0.5).astype(bool)
+    
+    # True positives, false positives, and false negatives
+    tp = np.sum(np.logical_and(predicted_binary, ground_truth))
+    fp = np.sum(np.logical_and(predicted_binary, np.logical_not(ground_truth)))
+    tn = np.sum(np.logical_and(np.logical_not(predicted_binary), np.logical_not(ground_truth)))
+    fn = np.sum(np.logical_and(np.logical_not(predicted_binary), ground_truth))
+    
+    # Pixel Accuracy
+    pa = (tp + tn) / np.prod(ground_truth.shape)
+    
+    # Intersection over Union (IoU)
+    iou = tp / (tp + fp + fn)
+    
+    # Dice coefficient
+    dice = (2 * tp) / (2 * tp + fp + fn)
+    
+    return [pa, iou, dice]
+
+
