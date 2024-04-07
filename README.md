@@ -8,8 +8,8 @@
 
 - We control that there working well in the test_image.ipynb (using a grey scale test image)
 
-- We measure the performance of our algorithm on (some) cow images of the [TU Darmstad dataset](http://host.robots.ox.ac.uk/pascal/VOC/databases.html#TUD)
-(Download/extract it and place the TUDarmstadt folder at the root of the project)
+- We measure the performance of our algorithm on (some) cow images of the [TU Darmstad dataset](http://host.robots.ox.ac.uk/pascal/VOC/databases.html#TUD) in test_dataset.ipynb
+(Download/extract the [dataset](http://host.robots.ox.ac.uk/pascal/VOC/download/tud.tar.gz) and place the TUDarmstadt folder at the root of the project to run this file)
 
 
 
