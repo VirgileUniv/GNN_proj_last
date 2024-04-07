@@ -4,9 +4,11 @@
 
 - The algorithm (and some useful function) are implemented in bp.py
 
+- We test the methods (BP and loopy BP) with the exemple from [here](https://github.com/krashkov/Belief-Propagation/blob/master/4-ImplementationBP.ipynb)
+
 - We control that there working well in the test_image.ipynb (using a grey scale test image)
 
-- We measure the performance of our algorithm on (some) images of http://host.robots.ox.ac.uk/pascal/VOC/download/tud.tar.gz 
+- We measure the performance of our algorithm on (some) cow images of the [TU Darmstad dataset](http://host.robots.ox.ac.uk/pascal/VOC/databases.html#TUD)
 (Download/extract it and place the TUDarmstadt folder at the root of the project)
 
 
